@@ -1,0 +1,11 @@
+# air.toml
+
+# Entrypoint file
+[build]
+binary = "./main"
+
+# File watching configuration
+[watcher]
+paths = ["."]
+exclude_paths = ["./tmp/*", "./vendor/*", "./.git/*", "./.idea/*", "./.vscode/*"]
+build_delay = 1000

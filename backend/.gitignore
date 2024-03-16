@@ -1,0 +1,22 @@
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+_obj
+_test
+
+# Output files
+*.exe
+*.test
+*.prof
+
+# Dependency directories (remove the comment below if you use `dep` tool)
+#vendor/
+
+# Go modules cache and binary files
+/go.sum
+/go.mod
+/bin/
+/pkg/
