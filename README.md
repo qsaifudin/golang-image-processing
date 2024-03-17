@@ -1,10 +1,10 @@
-## Golang Vue Image Processing App
+## Image Processing App Using Golang Vue 
 
 This application combines the power of Golang for backend processing and Nuxt.js (Vue.js) for frontend interaction to facilitate various image processing tasks. Whether you need to convert image formats, resize images, or compress them while maintaining quality, this app has got you covered.
 
 GitHub Repo : https://github.com/qsaifudin/golang-vue-image-processing.git
 
-Video Demo : 
+Video Demo : https://youtu.be/WCtu0jOKOy4
 
 
 ## Features
