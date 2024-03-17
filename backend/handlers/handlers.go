@@ -13,7 +13,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// RegisterRoutes registers routes with the Gin router
 func RegisterRoutes(router *gin.Engine) {
     router.POST("/convert/png-to-jpeg", ConvertPNGToJPEG)
     router.POST("/resize", ResizeImage)
@@ -21,12 +20,7 @@ func RegisterRoutes(router *gin.Engine) {
     router.Static("/temp_img", "./temp_img")
 }
 
-// convertImageToJPEG is a generic function to handle image conversion to JPEG
 func convertImageToJPEG(c *gin.Context, converter func(reader io.Reader) ([]byte, error)) {
-    // Retrieve the uploaded file
-    // fmt.Println("------------")
-    // fmt.Println(c.FormFile("image"))
-    // fmt.Println("------------")
     file, err := c.FormFile("image")
     if err != nil {
         c.JSON(http.StatusBadRequest, gin.H{"success": false, "error": "No file uploaded"})
@@ -64,16 +58,13 @@ func convertImageToJPEG(c *gin.Context, converter func(reader io.Reader) ([]byte
         return
     }
 
-    // Return the URL of the temporary file
     c.JSON(http.StatusOK, gin.H{"success": true, "url": "http://localhost:5000/temp_img/processed-image.jpeg"})
 }
 
-// ConvertPNGToJPEG handles the conversion of PNG images to JPEG
 func ConvertPNGToJPEG(c *gin.Context) {
     convertImageToJPEG(c, services.ConvertPNGToJPEG)
 }
 
-// ResizeImage handles image resizing
 func ResizeImage(c *gin.Context) {
     width, _ := strconv.Atoi(c.PostForm("width"))
     height, _ := strconv.Atoi(c.PostForm("height"))
@@ -82,7 +73,6 @@ func ResizeImage(c *gin.Context) {
     })
 }
 
-// CompressImage handles image compression
 func CompressImage(c *gin.Context) {
     quality, _ := strconv.Atoi(c.PostForm("quality"))
     convertImageToJPEG(c, func(reader io.Reader) ([]byte, error) {

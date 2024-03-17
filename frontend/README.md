@@ -28,8 +28,6 @@ Copy the `.env-example` file to create a `.env`
 
 ## Run Development Server
 
-Start the development server on `http://localhost:3000`:
-
 ```bash
 # npm
 npm run dev
@@ -37,3 +35,22 @@ npm run dev
 # yarn
 yarn dev
 ```
+
+## Build for Production
+```bash
+# npm
+npm run build
+
+# yarn
+yarn build
+```
+
+## Run Production Server
+```bash
+# npm
+npm run preview
+
+# yarn
+yarn preview
+```
+Start the development server on `http://localhost:3000`:
