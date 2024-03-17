@@ -24,6 +24,9 @@ func RegisterRoutes(router *gin.Engine) {
 // convertImageToJPEG is a generic function to handle image conversion to JPEG
 func convertImageToJPEG(c *gin.Context, converter func(reader io.Reader) ([]byte, error)) {
     // Retrieve the uploaded file
+    // fmt.Println("------------")
+    // fmt.Println(c.FormFile("image"))
+    // fmt.Println("------------")
     file, err := c.FormFile("image")
     if err != nil {
         c.JSON(http.StatusBadRequest, gin.H{"success": false, "error": "No file uploaded"})
